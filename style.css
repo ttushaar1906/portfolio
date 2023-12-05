@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    border: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.font-f {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.nav-item a {
+    width: 120px;
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+.container {
+    border: 2px solid;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin: 2rem;
+    padding: 5rem;
+    flex-wrap: wrap;
+}
+
+.name {
+    background: linear-gradient(90deg, rgba(19, 176, 245, 1) 0%, rgba(231, 15, 170, 1) 100%);
+    -webkit-background-clip: text; /* This is for webkit browsers like Chrome and Safari */
+    color: transparent; /* Set text color to transparent to make it adopt the gradient */
+    font-family: 500;
+}
+.cont{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* ## Tech ## */
+.tech-cont{
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin: 1rem;
+}
+.img-sec{
+    margin: 2rem;
+    width: 130px;
+    border: 2px solid;
+    height: 130px;
+}
+.img-sec img{
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    object-position: center;
+    height:100%;
+    padding: 0.2rem;
+}
