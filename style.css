@@ -211,3 +211,11 @@
 .cont-info span{
     margin: 0 1rem;
 }
+.ss{
+    background-color: #fff;
+    display: flex;
+    justify-content:center;
+}
+.ss i{
+    padding: 0 10px;
+}
