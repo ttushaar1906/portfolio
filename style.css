@@ -48,12 +48,9 @@
 
 .img {
     width: 418px;
-    /* 400px + 2 * 9px border */
     border: 4px solid transparent;
-    /* Set border color to transparent initially */
     border-image: linear-gradient(90deg, rgba(19, 176, 245, 1) 0%, rgba(231, 15, 170, 1) 100%);
     border-image-slice: 1;
-    /*Make sure the entire border is covered by the gradient*/
     overflow: hidden;
 }
 
@@ -62,7 +59,6 @@
     filter: grayscale(1);
     object-fit: cover;
     display: block;
-    /* Remove extra spacing caused by default inline display */
 }
 
 
@@ -78,7 +74,19 @@
     font-weight: 600;
     color: var(--primary-color);
 }
-
+.left-contain a{
+    text-decoration: none;
+    border: 2px solid;
+    padding: 1rem;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.left-contain a:hover{
+    background: linear-gradient(90deg, rgba(19, 176, 245, 1) 0%, rgba(231, 15, 170, 1) 100%);
+    color: #fff;
+    /* background-color: #42446E; */
+}
 
 /* ## Tech ## */
 .tech h1,
@@ -93,7 +101,7 @@
     font-style: normal;
     font-weight: 400;
     color: var(--secondary-color);
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .tech-cont {
@@ -108,14 +116,20 @@
     height: 130px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.img-sec:hover {
+    transform: translatey(-2px);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 10px 0px;
+    cursor: pointer;
+}
 .img-sec img {
-    width: 100%;
+    width: 80%;
     object-fit: cover;
     background-position: center;
     object-position: center;
-    height: 100%;
+    height: 80%;
     padding: 0.2rem;
+    display: block;
+    margin: .9rem auto;
 }
 
 /* ## Projects section ## */
@@ -124,7 +138,7 @@
     font-weight: 700;
     line-height: 26px;
     color: var(--primary-color);
-    margin-top: 1rem;
+    margin-top: 3rem;
     text-align: center;
 
 }
@@ -153,7 +167,11 @@
     margin: auto;
     flex-wrap: wrap;
 }
-
+.card-cont:hover {
+    transform: translatey(-2px);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 10px 0px;
+    cursor: pointer;
+}
 .card-cont {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     width: 450px;
@@ -211,6 +229,9 @@
 }
 
 /* ## Contact Me ## */
+.contact{
+    margin-top: 3rem;
+}
 .contactme {
     display: flex;
     flex-wrap: wrap;
@@ -236,7 +257,7 @@
 
 .ss i {
     padding: 0 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .md-heading {
@@ -248,3 +269,25 @@
     color: transparent;
     font-weight: 600;
 }
+
+/* ## Responsive ## */
+@media only screen and (max-width: 767px) {
+.img-sec{
+    /* border: 2px solid; */
+    width: 100px;
+    margin: .5rem;
+    height: 100px;
+}
+.contactme,.cont-info{
+    display: block;
+    margin: auto;
+    /* border: 2px solid; */
+    text-align: center;
+    padding: .5rem;
+}
+.left-contain a{
+    margin: 1rem 0;
+}
+}
+
+
