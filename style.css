@@ -253,6 +253,7 @@
     background-color: #fff;
     display: flex;
     justify-content: center;
+    padding: 0 0 5px 0;
 }
 
 .ss i {
