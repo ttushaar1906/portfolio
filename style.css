@@ -85,7 +85,6 @@
 .left-contain a:hover{
     background: linear-gradient(90deg, rgba(19, 176, 245, 1) 0%, rgba(231, 15, 170, 1) 100%);
     color: #fff;
-    /* background-color: #42446E; */
 }
 
 /* ## Tech ## */
@@ -274,7 +273,6 @@
 /* ## Responsive ## */
 @media only screen and (max-width: 767px) {
 .img-sec{
-    /* border: 2px solid; */
     width: 100px;
     margin: .5rem;
     height: 100px;
@@ -282,7 +280,6 @@
 .contactme,.cont-info{
     display: block;
     margin: auto;
-    /* border: 2px solid; */
     text-align: center;
     padding: .5rem;
 }
