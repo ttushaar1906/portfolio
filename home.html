@@ -1,360 +1,494 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tushar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tushar Tharwani | Software Engineer Portfolio</title>
+  <!-- Load Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="./img/gibliPhoto.jpeg" type="image/x-icon">
+  <!-- Removed original style.css link as all styles are merged here -->
   <script src="https://kit.fontawesome.com/0df6ecd121.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="shortcut icon" href="./img/main.jpeg" type="image/x-icon">
 </head>
 
-<body class="font-f">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body class="antialiased">
 
-      <h1 class="navbar-brand"><a
-          href="https://www.linkedin.com/in/tushar-tharwani-6527b5244/?originalSubdomain=in">Tushar</a></h1>
+  <!-- Header & Navigation -->
+  <header id="main-header"
+    class="sticky top-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm border-b border-[#e5e7eb] transition-default">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo/Initials with new accent color -->
+        <a href="#hero" class="text-2xl font-bold text-[#10b981] hover:text-[#34d399] transition-default">
+          Tushar
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#about" class="text-lg font-medium hover:text-[#10b981] transition-default">About</a>
+          <a href="#skills" class="text-lg font-medium hover:text-[#10b981] transition-default">Skills</a>
+          <a href="#projects" class="text-lg font-medium hover:text-[#10b981] transition-default">Projects</a>
+          <a href="#contact" class="text-lg font-medium hover:text-[#10b981] transition-default">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-button"
+          class="md:hidden text-gray-600 hover:text-[#10b981] focus:outline-none p-2 rounded-lg bg-gray-100/50 transition-default"
+          aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="reloadpg">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#tech">Tech Stack</a>
-        </li>
+    <!-- Mobile Menu: Removed the 'hidden' class here, as CSS handles the initial collapsed state -->
+    <div id="mobile-menu" class="md:hidden absolute w-full bg-white border-t border-[#e5e7eb]">
+      <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+        <a href="#about"
+          class="block px-3 py-2 rounded-md text-base font-medium w-full text-center hover:bg-gray-100 hover:text-[#10b981] transition-default">About</a>
+        <a href="#skills"
+          class="block px-3 py-2 rounded-md text-base font-medium w-full text-center hover:bg-gray-100 hover:text-[#10b981] transition-default">Skills</a>
+        <a href="#projects"
+          class="block px-3 py-2 rounded-md text-base font-medium w-full text-center hover:bg-gray-100 hover:text-[#10b981] transition-default">Projects</a>
+        <a href="#contact"
+          class="block px-3 py-2 rounded-md text-base font-medium w-full text-center hover:bg-gray-100 hover:text-[#10b981] transition-default">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#project">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <main>
 
-  <main class="container home" id="about">
-    <div class="left-contain">
-      <p class="cont">
-        Hi👋<br>
-        My name is<br>
-        <span class="name">Tushar Tharwani</span><br>
-        I build things for web
-      </p>
-      <a href="./TusharTharwaniResume.pdf" download="Tushar Tharwani's Resume.pdf">Download Resume <i
-          class="fa-solid fa-download"></i></a>
+    <!-- 1. Hero Section -->
+    <section id="hero"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col md:flex-row items-center justify-between min-h-screen">
+      <div class="md:w-3/5 space-y-6 text-center md:text-left order-2 md:order-1">
+        <p class="text-xl text-[#10b981] font-semibold tracking-wider uppercase">Hi, I'm Tushar Tharwani</p>
+        <h1 class="text-5xl sm:text-6xl font-extrabold text-[#1f2937] leading-tight">
+          Full Stack Engineer <span class="text-[#10b981]">(MERN)</span>
+        </h1>
+        <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
+          I turn ideas into fast, user-friendly web applications.
+        </p>
+        <div class="pt-6 flex justify-center md:justify-start space-x-4">
+          <a href="#projects"
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-[#10b981] hover:bg-[#34d399] transition-default transform hover:scale-[1.02]">
+            View Projects
+          </a>
+          <a href="./TusharTharwaniResume.pdf" download="TusharTharwaniResume.pdf"
+            class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 hover:bg-gray-100 transition-default">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Image Container -->
+      <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center order-1 md:order-2">
+        <div
+          class="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-[#10b981] shadow-emerald overflow-hidden bg-gray-100">
+          <img src="./img/gibliPhoto.jpeg" alt="Profile picture of Tushar" class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/9ca3af/ffffff?text=Image+Error'">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About Section - UPDATED TO JOURNEY STYLE -->
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-[#e5e7eb]">
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#1f2937] animate-on-scroll" style="--delay: 0s;">My
+        Journey & Experience
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <!-- Introduction: 2-3 lines -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-[#e5e7eb] mb-12 animate-on-scroll"
+          style="--delay: 0.1s;">
+          <p class="text-lg text-gray-700 mb-4">
+            I'm Tushar, a passionate **Full Stack Engineer** specializing in the MERN stack. I thrive on
+            solving complex problems and crafting robust, scalable web applications from the ground up.
+          </p>
+          <p class="text-lg text-gray-700 font-medium text-[#10b981]">
+            My goal is to translate design visions into high-performance digital experiences, always focusing
+            on clean code and user-centric design principles.
+          </p>
+        </div>
+
+        <!-- Work Experience Timeline -->
+        <h3 class="text-3xl font-semibold text-[#1f2937] text-center mb-8 animate-on-scroll" style="--delay: 0.2s;">
+          Professional Experience</h3>
+
+        <div class="timeline-container animate-on-scroll" style="--delay: 0.3s;">
+
+          <!-- Timeline Item 1: Full Stack Developer -->
+          <div class="timeline-item">
+            <div class="bg-white p-6 rounded-xl shadow-md border border-[#e5e7eb] hover:shadow-lg transition-default">
+              <p class="text-sm font-semibold text-gray-500">Jun 2024 – Present</p>
+              <h4 class="text-xl font-bold text-[#1f2937] mt-1">Software Engineer</h4>
+              <p class="text-[#10b981] font-medium mb-3">Techriigour IT Solution Pvt. Ltd. (Remote)</p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 text-md ml-4">
+                <li>Engineered VRetail Web App, a billing and inventory management system enabling vendors, employees,
+                  and invoice workflows.</li>
+                <li>Developed backend services for the Admin Portal using Node.js, Express, and MongoDB, improving
+                  vendor onboarding efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Frontend Intern -->
+          <div class="timeline-item">
+            <div class="bg-white p-6 rounded-xl shadow-md border border-[#e5e7eb] hover:shadow-lg transition-default">
+              <p class="text-sm font-semibold text-gray-500">Aug 2022 – Dec 2023</p>
+              <h4 class="text-xl font-bold text-[#1f2937] mt-1">Software Engineer (Intern)</h4>
+              <p class="text-[#10b981] font-medium mb-3">Techview Infotech Pvt.Ltd</p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 text-md ml-4">
+                <li> Built cross-browser-compatible UIs with HTML5, CSS3, Bootstrap, and Tailwind CSS, improving mobile usability by 25%.</li>
+                <li>Guided a 7-member intern team, assigning tasks, mentoring, and ensuring timely project delivery in Agile sprints
+                </li>
+                <li>Collaborated with backend developers, performed peer reviews, and upheld coding best practices.
+</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Skills/Tech Stack Section -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-[#e5e7eb]">
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#1f2937] animate-on-scroll" style="--delay: 0s;">Core
+        Technologies</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <!-- Skill Card Template (Added staggered delays) -->
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/javascript.png" alt="javascript" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">JavaScript </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/react.png" alt="react" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">React Js </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/nodejs.png" alt="javascript" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Node Js </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/typescript.png" alt="typescript" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Typescript </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/mongodb.png" alt="mongodb" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Mongodb </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/restApi.png" alt="mongodb" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">REST Api </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/mysql.png" alt="mysql" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Mysql </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/tailwind-css.png" alt="tailwindCSS" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Tailwind CSS </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/nextjs.png" alt="nextjs" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Next Js </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/html.png" alt="html" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">HTML5 </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/css.png" alt="css" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">CSS3 </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/c.png" alt="c" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">C </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Skills/Tools and Deployment -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-[#e5e7eb]">
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#1f2937] animate-on-scroll" style="--delay: 0s;">Tools
+        & Deployment</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+        <!-- Skill Card Template (Added staggered delays) -->
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/git.png" alt="git" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Git </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/github.jpg" alt="github" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">GitHub </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/postman.jpg" alt="postman" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Postman </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/render.png" alt="render" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Render </span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-[#e5e7eb] flex flex-col items-center hover:shadow-lg hover:border-[#10b981] transition-default animate-on-scroll"
+          style="--delay: 0.1s;">
+          <img src="./img/vercelLogo.png" alt="vercel" class="w-20 h-20">
+          <span class="text-lg font-semibold text-[#1f2937]">Vercel </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Projects Section -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-[#e5e7eb]">
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#1f2937] animate-on-scroll" style="--delay: 0s;">
+        Featured Projects</h2>
+
+      <div class="space-y-12">
+        <!-- Project 1: Find Stay -->
+        <article
+          class="bg-white p-6 md:p-8 rounded-xl border border-[#e5e7eb] shadow-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-default flex flex-col lg:flex-row gap-6 animate-on-scroll"
+          style="--delay: 0.1s;">
+          <div class="lg:w-2/3 space-y-4">
+            <h3 class="text-2xl font-semibold text-[#10b981]">FindStay - A Estate Project</h3>
+            <p class="text-gray-700">
+              FindStay is an online platform where users can buy, sell, or rent properties. Users can
+              create, update,
+              view, or delete property descriptions easily through the platform
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Node.js</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">React js</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Mongodb</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Express</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tan Stack Query</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">REST API</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tailwind CSS</span>
+
+            </div>
+            <div class="pt-4 space-x-4">
+              <a href="https://findstayy.vercel.app/" target="_blank"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Live Demo &rarr;
+              </a>
+              <a href="https://github.com/ttushaar1906/mern-Estate"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Codebase &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/3 flex items-center justify-center bg-gray-50 rounded-lg p-4 border border-[#e5e7eb]">
+            <a href="https://findstayy.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img src="./img/FindStay.png" alt="FindStay">
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Music -->
+        <article
+          class="bg-white p-6 md:p-8 rounded-xl border border-[#e5e7eb] shadow-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-default flex flex-col lg:flex-row gap-6 animate-on-scroll"
+          style="--delay: 0.2s;">
+          <div
+            class="lg:w-1/3 flex items-center justify-center bg-gray-50 rounded-lg p-4 border border-[#e5e7eb] order-1 lg:order-2">
+            <a href="https://musicaacademy.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img src="./img/musicacademy.png" alt="musicacademy">
+            </a>
+          </div>
+          <div class="lg:w-2/3 space-y-4 order-2 lg:order-1">
+            <h3 class="text-2xl font-semibold text-[#10b981]">Music Academy</h3>
+            <p class="text-gray-700">
+              A Static Music Academy website were a user for see a different music courses, search a
+              courses by
+              searching directly or with a help of filters.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Nextjs</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Aceternity UI</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tailwind CSS</span>
+            </div>
+            <div class="pt-4 space-x-4">
+              <a href="https://musicaacademy.vercel.app/" target="_blank"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Live Demo &rarr;
+              </a>
+              <a href="https://github.com/ttushaar1906/musicCourse" target="_blank"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Codebase &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: ECommerce Static -->
+        <article
+          class="bg-white p-6 md:p-8 rounded-xl border border-[#e5e7eb] shadow-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-default flex flex-col lg:flex-row gap-6 animate-on-scroll"
+          style="--delay: 0.3s;">
+          <div class="lg:w-2/3 space-y-4">
+            <h3 class="text-2xl font-semibold text-[#10b981]">Aura Nest</h3>
+            <p class="text-gray-700">
+              An Static ECommerce website were a user for see a product, search a product by searching
+              directly or with
+              a help of filters. Also User can see Top sellers and sone random blogs.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">React Js</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Typescript</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tailwind CSS</span>
+            </div>
+            <div class="pt-4 space-x-4">
+              <a href="https://auranest.vercel.app/" target="_blank"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Live Demo &rarr;
+              </a>
+              <a href="https://github.com/ttushaar1906/eCommerce"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Codebase &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/3 flex items-center justify-center bg-gray-50 rounded-lg p-4 border border-[#e5e7eb]">
+            <a href="https://auranest.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <img src="./img/auraNest.png" alt="auraNest">
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Chat App -->
+        <article
+          class="bg-white p-6 md:p-8 rounded-xl border border-[#e5e7eb] shadow-xl hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-default flex flex-col lg:flex-row gap-6 animate-on-scroll"
+          style="--delay: 0.2s;">
+          <div
+            class="lg:w-1/3 flex items-center justify-center bg-gray-50 rounded-lg p-4 border border-[#e5e7eb] order-1 lg:order-2">
+            <img src="./img/ChatSS.png" alt="giggle">
+          </div>
+          <div class="lg:w-2/3 space-y-4 order-2 lg:order-1">
+            <h3 class="text-2xl font-semibold text-[#10b981]">Giggle</h3>
+            <p class="text-gray-700">
+              Giggle is a real-time chat app where users can join rooms and exchange messages instantly.
+              With a clean
+              interface, emoji support, and message timestamps, it offers a seamless chat experience.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Node js</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Socket IO</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">React</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-600">Tailwind CSS</span>
+            </div>
+            <div class="pt-4 space-x-4">
+              <a href="https://github.com/ttushaar1906/chatApp" target="_blank"
+                class="text-[#10b981] hover:text-[#34d399] font-medium transition-default">
+                Codebase &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+   <section id="contact" 
+  class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-[#e5e7eb] bg-gradient-to-b from-white to-gray-50">
+  
+  <h2 class="text-4xl font-bold text-center mb-12 text-[#1f2937] animate-on-scroll" style="--delay: 0s;">
+    Get In Touch
+  </h2>
+
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-lg text-gray-600 mb-8">
+      Whether you have a question, want to collaborate, or just say hi — 
+      I’d love to connect with you.
+    </p>
+
+    <div class="flex justify-center gap-6">
+      <!-- Email -->
+      <a href="mailto:tharwanitushar19@gmail.com" 
+         class="flex items-center gap-2 px-5 py-3 bg-[#10b981] hover:bg-[#34d399] text-white font-semibold rounded-lg shadow-md transition">
+        ✉️ Email Me
+      </a>
+
+      <!-- Resume / CV -->
+      <a href="./TusharTharwaniResume.pdf" target="_blank"
+         class="flex items-center gap-2 px-5 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-md transition">
+        📄 View Resume
+      </a>
     </div>
-    <div class="img">
-      <img src="./img/gibliPhoto.jpeg" alt="">
-    </div>
+
+    
+  </div>
+
+  <!-- Decorative blur background -->
+  <div class="absolute top-10 left-5 w-32 h-32 bg-indigo-100 rounded-full blur-3xl opacity-30"></div>
+  <div class="absolute bottom-10 right-5 w-40 h-40 bg-pink-100 rounded-full blur-3xl opacity-30"></div>
+</section>
+
+
   </main>
 
-  <section class="container workHead ">
-    <h1>Work Experience</h1>
-    <section class="exp">
-      <div class="icon">
-        <img src="./img/techriigourLogo.png" alt="">
-      </div>
-      <div class="expInfo">
-        <h2>Techriigour IT Solutions Pvt.Ltd</h2>
-        <h4>Software Development Engineer (Full Time)</h4>
-        <h4>June 2024 - Present</h4>
-      </div>
-
-    </section>
-    <section class="exp container">
-
-      <div class="expInfo">
-        <h2>Techview Infotech Pvt.Ltd</h2>
-        <h4>Frontend Developer (Intern)</h4>
-        <h4>Nov 2023 - Feb 2024</h4>
-      </div>
-      <div class="icon">
-        <img src="./img/techviewLogo.png" alt="techviewLogo">
-      </div>
-
-    </section>
-  </section>
-
-
-  <section class="tech container" id="tech">
-    <h1>My Tech Stack</h1>
-    <center>
-      <h2> Technologies I’ve been working with recently</h2>
-    </center>
-    <div class="tech-cont home">
-      <div class="img-sec">
-        <img src="./img/javascript.png" alt="javaScript">
-      </div>
-      <div class="img-sec">
-        <img src="./img/react.png" alt="reactjs">
-      </div>
-      <div class="img-sec">
-        <img src="./img/typescript.png" alt="reactjs">
-      </div>
-      <div class="img-sec">
-        <img src="./img/nodejs.png" alt="nodejs">
-      </div>
-      <div class="img-sec">
-        <img src="./img/restApi.png" alt="restapi">
-      </div>
-      <div class="img-sec">
-        <img src="./img/css.png" alt="css">
-      </div>
-      <div class="img-sec">
-        <img src="./img/mongoDb.png" alt="mongoDb">
-      </div>
-      <div class="img-sec">
-        <img src="./img/tailwind-css.png" alt="tailwind">
-      </div>
-      <div class="img-sec">
-        <img src="./img/mysql.png" alt="mysql">
-      </div>
-      <div class="img-sec">
-        <img src="/img/jQuery.png" alt="jquery">
-      </div>
-      <div class="img-sec">
-        <img src="./img/html.png" alt="html5">
-      </div>
-      <div class="img-sec">
-        <img src="./img/git.png" alt="git">
-      </div>
-      <div class="img-sec">
-        <img src="./img/c.png" alt="cProgramming">
-      </div>
-      <div class="img-sec">
-        <img src="./img/bootstrap.png" alt="bootstrap">
-      </div>
+  <!-- Footer -->
+  <footer class="mt-20 bg-white border-t border-[#e5e7eb]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-600 text-sm">
+        Designed and built by Tushar with <span class="text-[#10b981] font-semibold">Love</span> & Coffee
+      </p>
     </div>
-  </section>
-
-  <section class="project container" id="project">
-    <h1>Projects</h1>
-    <h3>Things I’ve built so far</h3>
-
-    <div class="cards">
-      <!-- Real Estates -->
-      <div class="card-cont">
-        <div class="card-img">
-          <img src="./img/FindStay.png" alt="findStay">
-        </div>
-        <p class="proj-title">Find Stay</p>
-
-        <p class="proj-con">FindStay is an online platform where users can buy, sell, or rent properties. Users can
-          create, update, view, or delete property descriptions easily through the platform.</p>
-
-
-        <div class="techUsed">
-          <p>React Js</p>
-          <p>MongoDb</p>
-          <p>Node Js</p>
-          <p>Express Js</p>
-          <p>Tan Stack Query</p>
-          <p>Tailwind CSS</p>
-          <p>Firebase</p>
-        </div>
-
-        <div class="codeInfo">
-          <a href="https://findstayy.vercel.app/" target="_blank">
-            <button class="liveLink">
-              Live Demo
-            </button>
-          </a>
-          <a href="https://github.com/ttushaar1906/mern-Estate" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-       <!-- Music Academy -->
-      <div class="card-cont">
-        <div class="card-img">
-          <img src="./img/musicacademy.png" alt="musicacademy">
-        </div>
-        <p class="proj-title">Music Academy</p>
-
-        <p class="proj-con">
-          An Static Music Academy website were a user for see a different music courses, search a courses by searching directly or with a
-          help of filters. 
-        </p>
-        <!-- </div> -->
-
-        <div class="techUsed">
-          <p>Next Js</p>
-          <p>Aceternity UI</p>
-          <p>Tailwind CSS</p>
-        </div>
-
-        <div class="codeInfo">
-          <a href="https://musicaacademy.vercel.app/" target="_blank">
-            <button class="liveLink">
-              Live Demo
-            </button>
-          </a>
-          <a href="https://github.com/ttushaar1906/musicCourse" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <!-- Aura Nest -->
-      <div class="card-cont">
-        <div class="card-img">
-          <img src="./img/auraNest.png" alt="auraNest">
-        </div>
-        <p class="proj-title">Aura Nest</p>
-
-        <p class="proj-con">
-          An Static ECommerce website were a user for see a product, search a product by searching directly or with a
-          help of filters. Also User can see Top sellers and sone random blogs.
-        </p>
-        <!-- </div> -->
-
-        <div class="techUsed">
-          <p>React Js</p>
-          <p>Type Script</p>
-          <p>Tailwind CSS</p>
-        </div>
-
-        <div class="codeInfo">
-          <a href="https://auranest.vercel.app/" target="_blank">
-            <button class="liveLink">
-              Live Demo
-            </button>
-          </a>
-          <a href="https://github.com/ttushaar1906/eCommerce" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <!-- Giggle -->
-      <div class="card-cont">
-        <div class="card-img">
-          <img src="./img/ChatSS.png" alt="chatApp">
-        </div>
-        <p class="proj-title">Giggle</p>
-
-        <div>
-          <p class="proj-con">
-            Giggle is a real-time chat app where users can join rooms and exchange messages instantly. With a clean
-            interface, emoji support, and message timestamps, it offers a seamless chat experience. </p>
-        </div>
-
-        <div class="techUsed">
-          <p>React Js</p>
-          <p>Socket IO</p>
-          <p>Tailwind CSS</p>
-          <p>Node Js</p>
-        </div>
-
-        <div class="codeInfo">
-
-          <a href="https://github.com/ttushaar1906/chatApp" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <!-- Amazon CLone -->
-      <div class="card-cont">
-        <div class="card-img amazonCloneImg">
-          <img src="./img/amazonSS.png" alt="amazonClone">
-        </div>
-        <p class="proj-title">Amazon Clone (UI)</p>
-
-        <p class="proj-con">Amazon CLone is a Clone of Amazon.com.Explore a static Amazon Clone website that mirrors
-          the
-          renowned platform's simplicity. Discover curated product listings and a familiar interface. </p>
-
-        <div class="techUsed">
-          <p>HTML5</p>
-          <p>CSS3</p>
-        </div>
-        
-        <div class="codeInfo">
-          <a href="https://tt-amazonclone.netlify.app/" target="_blank">
-            <button class="liveLink">
-              Live Demo
-            </button>
-          </a>
-          <a href="https://github.com/ttushaar1906/amazonClone" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <!-- News Api -->
-      <div class="card-cont">
-        <div class="card-img">
-          <img src="./img/NewApi.png" alt="NewApi">
-        </div>
-        <p class="proj-title">News Api</p>
-
-        <p class="proj-con">
-          Stay informed with our News API-powered news site. Experience real-time updates, diverse sources, and a
-          user-friendly interface. Uncover the latest headlines effortlessly, as our platform seamlessly delivers the
-          pulse of the world to your fingertips.
-        </p>
-
-        <div class="techUsed">
-          <p>HTML5</p>
-          <p>CSS3</p>
-          <p>JavaScript</p>
-        </div>
-
-        <div class="codeInfo">
-          <a href="https://github.com/ttushaar1906/newsApi" target="_blank">
-            <button class="githubLink">
-              Code
-            </button>
-          </a>
-        </div>
-      </div>
-
-  </section>
-
-  <footer class="contact container">
-    <h1>Get in Touch</h1>
-
-    <div class="contactme">
-      <div class="logo">
-        <h1 class="navbar-brand"><a
-            href="https://www.linkedin.com/in/tushar-tharwani-6527b5244/?originalSubdomain=in">Tushar</a></h1>
-      </div>
-      <div class="cont-info">
-        <span>+91 9527921209</span>
-        <span>tharwanitushar19@gmail.com
-        </span>
-      </div>
-    </div>
-  </footer>
-  <footer class="footer container" id="footer">
-    <h3 class="md-heading">Designed and built by Tushar with Love & Coffee</h3>
-    <div class="ss">
+    <div class="flex gap-6 justify-center items-center py-2">
       <a href="https://twitter.com/tushaar_19"><i class="fa-brands fa-x-twitter" style="color: #42446E;"></i></a>
 
       <a href="https://www.instagram.com/_tushaar_19/"><i class="fa-brands fa-instagram"
@@ -367,13 +501,82 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
   <script>
-    document.getElementById('reloadpg').addEventListener('click', function () {
-      location.reload();
-    })
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+      // Select all links within the mobile menu
+      const navLinks = mobileMenu.querySelectorAll('a');
+      const header = document.getElementById('main-header');
+
+      /* --- Mobile Menu Logic (Updated for smooth transition) --- */
+      const toggleMenu = () => {
+        const isOpening = mobileMenu.classList.contains('menu-open');
+
+        if (!isOpening) {
+          // Open the menu: Add the class to transition to max-height/opacity 1
+          mobileMenu.classList.add('menu-open');
+          menuIconOpen.classList.add('hidden');
+          menuIconClose.classList.remove('hidden');
+        } else {
+          // Close the menu: Remove the class to transition back to max-height 0/opacity 0
+          mobileMenu.classList.remove('menu-open');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+        }
+      };
+
+      menuButton.addEventListener('click', toggleMenu);
+
+      // Close menu when a link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Check if the menu is open before trying to close it
+          if (mobileMenu.classList.contains('menu-open')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      /* --- Navbar Scroll Effect Logic --- */
+      const handleHeaderScroll = () => {
+        // Add a shadow/background change when scrolled past 50px
+        if (window.scrollY > 50) {
+          header.classList.add('navbar-scrolled');
+        } else {
+          header.classList.remove('navbar-scrolled');
+        }
+      };
+
+      window.addEventListener('scroll', handleHeaderScroll);
+      handleHeaderScroll();
+
+      /* --- Scroll Reveal (Intersection Observer) Logic --- */
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Element is visible, show the animation
+            entry.target.classList.add('animate-visible');
+            // Stop observing once visible
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        // Trigger when 10% of the element is visible
+        threshold: 0.1
+      });
+
+      // Find all elements marked for animation
+      document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        // Apply a small randomized delay to sections/cards for a subtle staggered effect
+        // If it already has a delay from inline style (like in skills), use that, otherwise generate one
+        const delay = element.style.getPropertyValue('--delay') || `${Math.random() * 0.1}s`;
+        element.style.setProperty('--delay', delay);
+        observer.observe(element);
+      });
+    });
   </script>
 </body>
 
