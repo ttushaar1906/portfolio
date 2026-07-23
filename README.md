@@ -44,4 +44,4 @@ Your feedback is always appreciated! Feel free to reach out through the contact 
 This portfolio is for personal use. All rights reserved.
 
 
-<img src="./img/readmePhoto.png" >
+<!-- <img src="./img/readmePhoto.png" > -->
